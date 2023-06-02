@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Topographical Survey",
+        "icon": "fa-solid fa-mountain"
+    },
+    {
+        "title": "Boundary Demarcation",
+        "icon": "fa-solid fa-road-barrier"
+    },
+    {
+        "title": "Building Lineouts",
+        "icon": "fa-solid fa-building"
+    },
+    {
+        "title": "Quantity Survey",
+        "icon": "fa-solid fa-file-pen"
+    },
+    {
+        "title": "Road Survey",
+        "icon": "fa-solid fa-road"
+    },
+    {
+        "title": "Estimation & Billing",
+        "icon": "fa-solid fa-receipt"
+    },
+    {
+        "title": "Drone Survey & Aerial Footage",
+        "icon": "fa-solid fa-camera-retro"
+    },
+    {
+        "title": "Sub-division of property",
+        "icon": "fa-solid fa-pie-chart"
+    }
+]

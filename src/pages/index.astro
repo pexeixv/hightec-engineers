@@ -1,81 +1,110 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import FeatureCard from "@components/FeatureCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import features from "@data/features.json";
+import services from "@data/services.json";
+import projects from "@data/projects.json";
+import ServiceCard from "@components/ServiceCard.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<BaseLayout title="Hightec Engineers" header="absolute">
+  <section
+    class="bg-no-repeat bg-cover bg-top filter"
+    style="background-image:url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"
+  >
+    <div class="bg-black/40 text-white">
+      <div
+        class="container mx-auto py-10 lg:py-20 flex flex-col items-center min-h-screen justify-center text-center drop-shadow-lg"
+      >
+        <h1 class="text-4xl lg:text-7xl font-black">
+          Building <span
+            style="background: url(/images/clouds.svg) no-repeat bottom center/contain;padding-top: 1em;"
+            >Dreams</span
+          >, <br /> One Project at a Time
+        </h1>
+        <p class="text-lg lg:text-xl mt-6 max-w-3xl">
+          At Hightec Engineers, we are driven by our commitment to deliver
+          exceptional value to our clients. With a relentless focus on
+          efficiency and cost-effectiveness, we provide innovative solutions
+          that meet your needs.
+        </p>
+        <a
+          href="#"
+          class="text-lg mt-8 bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105"
+          >Book a Consultation</a
+        >
+      </div>
+    </div>
+  </section>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+  <section class="bg-yellow-50">
+    <div class="container mx-auto px-5 py-10 lg:pt-0 lg:pb-20">
+      <h2 class="sr-only">Features</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        {features.map((feature, i) => <FeatureCard {feature} />)}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="hidden bg-cover bg-bottom bg-no-repeat"
+    style="background-image:url(https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);"
+  >
+    <div class="w-full h-full bg-yellow-300/90">
+      <div class="container mx-auto px-5 py-10 lg:py-16">
+        <h2 class="sr-only">Achievements</h2>
+
+        <div class="flex items-center justify-center">
+          <h3 class="text-center flex flex-col items-center">
+            <span class="text-4xl font-bold">800+</span>
+            <span class="uppercase text-sm tracking-wider"
+              >Projects completed</span
+            >
+          </h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto px-5 py-10 lg:py-16">
+      <h2 class="text-4xl font-bold text-center">Services</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mt-16">
+        {services.map((service) => <ServiceCard {service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="bg-cover bg-bottom bg-no-repeat mt-12"
+    style="background-image:url(https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);"
+  >
+    <div class="w-full h-full bg-white/90">
+      <div class="container mx-auto px-5 py-10">
+        <h2 class="text-4xl font-bold text-center">Singature Projects</h2>
+
+        <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-12 mt-16">
+          {projects.map((project) => <ProjectCard {project} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-5 py-20">
+    <div
+      class="container mx-auto bg-yellow-300 p-8 max-w-4xl grid lg:grid-cols-2 gap-8"
+    >
+      <div class="flex flex-col items-start justify-center px-4">
+        <h2 class="text-4xl font-bold">Transform Visions into Reality</h2>
+        <p class="text-lg mt-2">Discover Our Construction Expertise Today</p>
+        <a
+          href="#"
+          class="text-lg mt-8 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105"
+          >Book a Consultation</a
+        >
+      </div>
+      <img src="/tracktor.png" alt="" class="max-h-full w-full relative left-28" />
+    </div>
+  </section>
+</BaseLayout>
