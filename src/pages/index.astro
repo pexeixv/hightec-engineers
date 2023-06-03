@@ -8,22 +8,22 @@ import ServiceCard from "@components/ServiceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 ---
 
-<BaseLayout title="Hightec Engineers" header="absolute">
+<BaseLayout title="Home" header="absolute">
   <section
     class="bg-no-repeat bg-cover bg-top filter"
     style="background-image:url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"
   >
     <div class="bg-black/40 text-white">
       <div
-        class="container mx-auto py-10 lg:py-20 flex flex-col items-center min-h-screen justify-center text-center drop-shadow-lg"
+        class="container mx-auto px-5 py-10 lg:py-20 flex flex-col items-center min-h-screen justify-center text-center drop-shadow-lg"
       >
-        <h1 class="text-4xl lg:text-7xl font-black">
+        <h1 class="text-3xl md:text-4xl lg:text-7xl font-black">
           Building <span
             style="background: url(/images/clouds.svg) no-repeat bottom center/contain;padding-top: 1em;"
             >Dreams</span
           >, <br /> One Project at a Time
         </h1>
-        <p class="text-lg lg:text-xl mt-6 max-w-3xl">
+        <p class="md:text-lg lg:text-xl mt-6 max-w-3xl">
           At Hightec Engineers, we are driven by our commitment to deliver
           exceptional value to our clients. With a relentless focus on
           efficiency and cost-effectiveness, we provide innovative solutions
@@ -31,7 +31,7 @@ import ProjectCard from "@components/ProjectCard.astro";
         </p>
         <a
           href="#"
-          class="text-lg mt-8 bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105"
+          class="text-lg mt-8 bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105 text-center"
           >Book a Consultation</a
         >
       </div>
@@ -80,9 +80,9 @@ import ProjectCard from "@components/ProjectCard.astro";
     class="bg-cover bg-bottom bg-no-repeat mt-12"
     style="background-image:url(https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);"
   >
-    <div class="w-full h-full bg-white/90">
+    <div class="w-full h-full bg-yellow-200/70">
       <div class="container mx-auto px-5 py-10">
-        <h2 class="text-4xl font-bold text-center">Singature Projects</h2>
+        <h2 class="text-4xl font-bold text-center">Signature Projects</h2>
 
         <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-12 mt-16">
           {projects.map((project) => <ProjectCard {project} />)}
@@ -93,18 +93,22 @@ import ProjectCard from "@components/ProjectCard.astro";
 
   <section class="mx-5 py-20">
     <div
-      class="container mx-auto bg-yellow-300 p-8 max-w-4xl grid lg:grid-cols-2 gap-8"
+      class="container mx-auto bg-yellow-300/70 p-8 max-w-4xl flex flex-col lg:flex-row gap-8 justify-center mt-28 lg:mt-16"
     >
-      <div class="flex flex-col items-start justify-center px-4">
+      <img
+        src="/tracktor.png"
+        alt=""
+        class="max-h-full w-full relative lg:left-28 order-1 lg:order-2 max-w-lg -mt-28"
+      />
+      <div class="flex flex-col items-start justify-center px-4 order-2 lg:order-1">
         <h2 class="text-4xl font-bold">Transform Visions into Reality</h2>
         <p class="text-lg mt-2">Discover Our Construction Expertise Today</p>
         <a
           href="#"
-          class="text-lg mt-8 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105"
+          class="text-lg mt-8 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center"
           >Book a Consultation</a
         >
       </div>
-      <img src="/tracktor.png" alt="" class="max-h-full w-full relative left-28" />
     </div>
   </section>
 </BaseLayout>
