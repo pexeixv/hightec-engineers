@@ -1,19 +1,21 @@
 ---
 const {header='relative'} = Astro.props
 const headerIsAbsolute = header==='absolute'
-
+const navLinks = [
+    {title: 'Home', href: '/'},
+    {title: 'About', href: '/about'},
+    {title: 'Contact', href: '/contact'},
+]
 ---
 
 <header class:list={[ 'top-0 left-0 w-full z-20', { 'absolute': headerIsAbsolute, 'bg-black': !headerIsAbsolute } ]}>
-    <div class="container mx-auto px-5 py-5 lg:py-10 flex items-center text-white justify-between">
+    <div class="container mx-auto px-5 py-5 flex flex-col md:flex-row items-center text-white justify-between gap-4">
         <a href="/" class="flex items-center gap-2">
             <img src="/images/logo.svg" alt="" class="h-12">
             <span class="leading-none">Hightec <br> Engineers</span>
         </a>
-        <nav class="flex items-center gap-4">
-            <a href="/" class="hover:text-yellow-300 transition-colors">Home</a>
-            <a href="/about" class="hover:text-yellow-300 transition-colors">About</a>
-            <a href="/contact" class="hover:text-yellow-300 transition-colors">Contact</a>
+        <nav class="flex items-center gap-4 text-sm md:text-base">
+            {navLinks.map(link=><a href={link.href} class="hover:text-yellow-300 transition-colors">{link.title}</a>)}
         </nav>
     </div>
 </header>
