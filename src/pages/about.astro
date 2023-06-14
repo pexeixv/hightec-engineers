@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import team from "@data/team.json";
+
 ---
 
 <BaseLayout title="About">
@@ -20,7 +22,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
                     The firm is run by a team of energetic and competent workforce
                     under the dedicated supervision of pragmatic leaders. Since
                     inception the firm has successfully completed various survey
-                    works of more than 800 projects in the field of Civil
+                    works of more than 3000 projects in the field of Civil
                     Engineering, ranging from Highway Works, Building Works, Land
                     Development, Bridge Works, Property Surveys, in-depth Estimation
                     & Billing and so on.
@@ -40,4 +42,24 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             </div>
         </div>
     </section>
+
+    <section>
+        <div class="container mx-auto px-5 py-10 lg:py-20">
+            <h2 class="text-5xl mb-8 font-black">The leadership</h2>
+            <div class="grid gap-16 lg:grid-cols-3 mt-16">
+                {
+                    team.map(person=>(
+                        <div class="flex flex-col max-w-md mx-auto">
+                            <img src={person?.image} alt="" class="aspect-square object-cover overflow-hidden">
+                            <h3 class="text-2xl font-bold mt-4">{person?.name}</h3>
+                            <p class="font-bold italic text-neutral-600">{person?.designation}</p>
+                            <p class="mt-2">{person?.description}</p>
+                        </div>
+                    ))
+                }
+
+            </div>
+        </div>
+    </section>
+
 </BaseLayout>

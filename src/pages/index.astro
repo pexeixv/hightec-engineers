@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import features from "@data/features.json";
 import services from "@data/services.json";
 import projects from "@data/projects.json";
+import clients from "@data/clients.json";
 import ServiceCard from "@components/ServiceCard.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 ---
@@ -77,13 +78,12 @@ import ProjectCard from "@components/ProjectCard.astro";
   </section>
 
   <section
-    class="bg-cover bg-bottom bg-no-repeat mt-12"
+    class="hidden bg-cover bg-bottom bg-no-repeat mt-12"
     style="background-image:url(https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);"
   >
     <div class="w-full h-full bg-yellow-200/70">
       <div class="container mx-auto px-5 py-10">
         <h2 class="text-4xl font-bold text-center">Signature Projects</h2>
-
         <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-12 mt-16">
           {projects.map((project) => <ProjectCard {project} />)}
         </div>
@@ -91,16 +91,52 @@ import ProjectCard from "@components/ProjectCard.astro";
     </div>
   </section>
 
+  <section>
+    <div class="container mx-auto px-5 py-10 lg:py-20">
+      <h2 class="text-4xl font-bold text-center">Signature Projects</h2>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-4">
+      {
+        projects.map(project=>(
+          <div style={`background-image:url(${project?.image});`} class="bg-no-repeat bg-center bg-cover w-full">
+            <div class="bg-gradient-to-t from-black via-black/40 to-black/10 w-full text-white p-8 flex flex-col justify-end pt-32 transition-colors group h-64">
+              <h3 class="text-2xl font-bold">{project?.title}</h3>
+              <div class="grid lg:grid-rows-0fr group-hover:grid-rows-1fr transition-grid-rows">
+                <p class="text-neutral-300 overflow-hidden">{project?.desc}</p>
+              </div>    
+            </div>
+
+          </div>
+        ))
+      }
+
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container mx-auto px-5 py-10 lg:py-20">
+      <h2 class="text-4xl font-bold text-center">Our partners</h2>
+
+      <div class="grid grid-cols-4 max-w-2xl mx-auto gap-8 lg:gap-12 mt-16">
+        {
+          clients.map(client=>(<img src={client.url} class="max-h-48 mx-auto grayscale" />))
+        }
+      </div>
+
+    </div>
+  </section>
+
   <section class="mx-5 py-20">
     <div
-      class="container mx-auto bg-yellow-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row gap-8 justify-center mt-28 lg:mt-16"
+      class="container mx-auto bg-yellow-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end"
     >
       <img
         src="/tracktor.png"
         alt=""
-        class="max-h-full w-full relative lg:left-28 order-1 lg:order-2 max-w-lg -mt-28"
+        class="max-h-full w-full relative lg:left-28 max-w-md -mt-28"
       />
-      <div class="flex flex-col items-start justify-center lg:px-4 order-2 lg:order-1">
+      <div class="flex flex-col items-start justify-center lg:px-4">
         <h2 class="text-4xl font-bold">Transform Visions into Reality</h2>
         <p class="text-lg mt-2">Discover Our Construction Expertise Today</p>
         <a

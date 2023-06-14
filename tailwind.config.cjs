@@ -6,6 +6,13 @@ module.exports = {
 		extend: {
 			fontFamily:{
 				outfit: ['Outfit', ...defaultTheme.fontFamily.sans]
+			},
+			transitionProperty: {
+				'grid-rows': 'grid-template-rows'
+			},
+			gridTemplateRows: {
+				'0fr': '0fr',
+				'1fr': '1fr',
 			}
 		},
 	},

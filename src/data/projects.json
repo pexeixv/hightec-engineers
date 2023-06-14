@@ -1,10 +1,22 @@
 [
     {
         "title": "Western Bypass",
-        "desc": "12 Km. road connecting Verna to Dramapur in South Goa"
+        "desc": "12 Km. road connecting Verna to Dramapur in South Goa",
+        "image": "https://images.pexels.com/photos/2902747/pexels-photo-2902747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
         "title": "Zambaulim Temple Survey",
-        "desc": "15 lakh m² survey along with aerial survey & videography of the entire area"
+        "desc": "15 lakh m² survey along with aerial survey & videography of the entire area",
+        "image": "https://images.pexels.com/photos/2121549/pexels-photo-2121549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "title": "Aerial survey",
+        "desc": "Aerial survey of 24 lakh sqm for Water Resource Department, Goa",
+        "image": "https://images.pexels.com/photos/312105/pexels-photo-312105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "title": "Huballi Station Survey",
+        "desc": "Survey of Huballi Station for South Western Railways (India's longest Railway Station)",
+        "image": "https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
 ]

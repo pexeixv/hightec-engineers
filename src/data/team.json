@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Bob the Builder",
+        "designation": "Construction Manager",
+        "description": "Bob the Builder is an experienced construction manager with a knack for fixing things and a passion for getting the job done right.",
+        "image": "https://images.pexels.com/photos/1674666/pexels-photo-1674666.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&dpr=1&crop=faces,entropy&fit=crop"
+    },
+    {
+        "name": "Jack the Juggernaut",
+        "designation": "Architect",
+        "description": "Jack the Juggernaut is an architect known for his impressive designs that can withstand any challenge, combining creativity and strength.",
+        "image": "https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&dpr=1&crop=faces,entropy&fit=crop"
+    },
+    {
+        "name": "Max the Magnificent",
+        "designation": "Civil Engineer",
+        "description": "Max the Magnificent is a civil engineer with an extraordinary vision, turning construction dreams into reality with precision and flair.",
+        "image": "https://images.pexels.com/photos/5876516/pexels-photo-5876516.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&dpr=1&crop=faces,entropy&fit=crop"
+    }
+]

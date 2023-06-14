@@ -30,5 +30,13 @@
     {
         "title": "Sub-division of property",
         "icon": "fa-solid fa-pie-chart"
+    },
+    {
+        "title": "Mapping",
+        "icon": "fa-solid fa-map"
+    },
+    {
+        "title": "Satellite survey ",
+        "icon": "fa-solid fa-satellite"
     }
 ]
