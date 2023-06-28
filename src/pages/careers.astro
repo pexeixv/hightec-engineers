@@ -1,13 +1,23 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import openings from "@data/openings.json";
+import BaseLayout from '@layouts/BaseLayout.astro'
+import hygraph from '@js/hygraph'
+
+interface Job {
+    title: string
+    description: {
+        html: string
+    }
+    number: string
+}
+
+const jobs = (await hygraph('jobs')) as Array<Job>
 ---
 
-<BaseLayout title="Careers">
+<BaseLayout title='Careers'>
     <section>
-        <div class="container mx-auto px-5 py-10 lg:py-20">
-            <h1 class="text-5xl mb-8 font-black">Join the team</h1>
-            <p class="max-w-4xl">
+        <div class='container mx-auto px-5 py-10 lg:py-20'>
+            <h1 class='text-5xl mb-8 font-black'>Join the team</h1>
+            <p class='max-w-4xl'>
                 Are you passionate about the construction industry? Join our
                 team of dedicated professionals and be a part of building
                 remarkable structures. We offer exciting career opportunities,
@@ -16,35 +26,21 @@ import openings from "@data/openings.json";
                 step towards a rewarding career with us.
             </p>
 
-            <div class="grid gap-12 mt-16">
+            <div class='grid gap-12 mt-16 lg:grid-cols-2'>
                 {
-                    openings.map((opening) => (
-                        <div class="bg-yellow-50 p-8">
-                           <div class="flex gap-8 items-start justify-between">
-                            <h2 class="text-3xl font-bold">{opening?.title}</h2>
-                            <a href="#apply" class="text-lg bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105 text-center">Apply</a>
+                    jobs?.map((job) => (
+                        <div class='bg-yellow-50 p-8'>
+                            <div class='flex gap-8 items-start justify-between'>
+                                <h2 class='text-3xl font-bold'>{job?.title}</h2>
+                                <a
+                                    href='#apply'
+                                    class='text-lg bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105 text-center'
+                                >
+                                    Apply
+                                </a>
                             </div>
-                            <div class="flex flex-col lg:flex-row lg:gap-16 mt-4">
-                                <div class="lg:w-1/2">
-                                    <h3 class="mt-4 font-semibold text-lg">
-                                        Job description:
-                                    </h3>
-                                    <p>{opening?.description}</p>
-                                </div>
-                                <div>
-                                    <h3 class="mt-4 font-semibold text-lg">
-                                        Experience:
-                                    </h3>
-                                    <p>{opening?.experience}</p>
-                                    <h3 class="mt-4 font-semibold text-lg">
-                                        Skills:
-                                    </h3>
-                                    <ul class="list-disc pl-4">
-                                        {opening?.skills?.map((skill) => (
-                                            <li>{skill}</li>
-                                        ))}
-                                    </ul>
-                                </div>{" "}
+                            <div class='prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-headings:font-bold prose-p:m-0 prose-headings:mt-2'>
+                                <Fragment set:html={job.description.html} />
                             </div>
                         </div>
                     ))
@@ -53,26 +49,31 @@ import openings from "@data/openings.json";
         </div>
     </section>
 
-    <section class="mx-5 py-20" id="apply">
+    <section class='mx-5 py-20' id='apply'>
         <div
-            class="container mx-auto bg-yellow-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end"
+            class='container mx-auto bg-yellow-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end'
         >
             <img
-                src="/tracktor.png"
-                alt=""
-                class="max-h-full w-full relative lg:left-28 max-w-md -mt-28"
+                src='/tracktor.png'
+                alt=''
+                class='max-h-full w-full relative lg:left-28 max-w-md -mt-28'
             />
-            <div class="flex flex-col items-start justify-center lg:px-4">
-                <h2 class="text-4xl font-bold">
+            <div class='flex flex-col items-start justify-center lg:px-4'>
+                <h2 class='text-4xl font-bold'>
                     Come, build your future with us!
                 </h2>
-                <p class="text-lg mt-2">
-                    Ready to lay the foundation for your career in construction? Join our team of builders and shape the future of remarkable structures. Take the next step today and apply for our exciting job opportunities. Let's construct a promising future together!
+                <p class='mt-2'>
+                    Ready to lay the foundation for your career in construction?
+                    Join our team of builders and shape the future of remarkable
+                    structures. Take the next step today and apply for our
+                    exciting job opportunities. Let's construct a promising
+                    future together!
                 </p>
+                <p class='mt-8 text-lg'>To apply, please email CV to</p>
                 <a
-                    href="/contact"
-                    class="lg:text-lg mt-8 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center"
-                    >Contact us</a
+                    href='mailto:management.hightec@gmail.com?subject=Job application'
+                    class='lg:text-lg mt-2 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center'
+                    >management.hightec@gmail.com</a
                 >
             </div>
         </div>
