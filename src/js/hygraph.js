@@ -45,6 +45,17 @@ const queries = {
             }
         }
     `,
+    offices: gql`
+        query Offices {
+            offices {
+                email
+                address
+                name
+                map
+                phone
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {
