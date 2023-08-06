@@ -3,7 +3,6 @@ import hygraph from '@js/hygraph'
 import FeatureCard from '@components/FeatureCard.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import features from '@data/features.json'
-import projects from '@data/projects.json'
 import clients from '@data/clients.json'
 import ServiceCard from '@components/ServiceCard.astro'
 import ProjectCard from '@components/ProjectCard.astro'
@@ -11,7 +10,15 @@ interface Service {
     title: string
     icon: string
 }
+interface Project {
+    image: {
+        url: string
+    }
+    title: string
+    description: string
+}
 const services = (await hygraph('services')) as Array<Service>
+const projects = (await hygraph('projects')) as Array<Project>
 ---
 
 <BaseLayout title='Home' header='absolute'>
@@ -106,14 +113,14 @@ const services = (await hygraph('services')) as Array<Service>
             {
                 projects.map((project) => (
                     <div
-                        style={`background-image:url(${project?.image});`}
+                        style={`background-image:url(${project?.image?.url});`}
                         class='bg-no-repeat bg-center bg-cover w-full'
                     >
                         <div class='bg-gradient-to-t from-black via-black/40 to-black/10 w-full text-white p-8 flex flex-col justify-end pt-32 transition-colors group h-64'>
                             <h3 class='text-2xl font-bold'>{project?.title}</h3>
                             <div class='grid lg:grid-rows-0fr group-hover:grid-rows-1fr transition-grid-rows'>
                                 <p class='text-neutral-300 overflow-hidden'>
-                                    {project?.desc}
+                                    {project?.description}
                                 </p>
                             </div>
                         </div>

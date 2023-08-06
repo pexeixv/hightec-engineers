@@ -23,6 +23,17 @@ const queries = {
             }
         }
     `,
+    projects: gql`
+        query Projects {
+            projects {
+                image {
+                    url
+                }
+                title
+                description
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {
