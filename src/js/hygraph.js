@@ -15,6 +15,14 @@ const queries = {
             }
         }
     `,
+    services: gql`
+        query Services {
+            services {
+                title
+                icon
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {

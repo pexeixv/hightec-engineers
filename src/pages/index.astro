@@ -1,12 +1,17 @@
 ---
+import hygraph from '@js/hygraph'
 import FeatureCard from '@components/FeatureCard.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import features from '@data/features.json'
-import services from '@data/services.json'
 import projects from '@data/projects.json'
 import clients from '@data/clients.json'
 import ServiceCard from '@components/ServiceCard.astro'
 import ProjectCard from '@components/ProjectCard.astro'
+interface Service {
+    title: string
+    icon: string
+}
+const services = (await hygraph('services')) as Array<Service>
 ---
 
 <BaseLayout title='Home' header='absolute'>
