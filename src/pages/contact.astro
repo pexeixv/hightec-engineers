@@ -117,10 +117,10 @@ const offices = (await hygraph('offices')) as Array<Office>
                 </a>
             </div>
         </div>
-        <div class='container mx-auto px-5 py-10 grid lg:grid-cols-2 gap-8'>
+        <div class='container mx-auto px-5 py-10 grid lg:grid-cols-2 gap-24'>
             {
                 offices.map((office) => (
-                    <div class='space-y-4'>
+                    <div class=' bg-blue-50'>
                         <iframe
                             src={extractIframeSrc(office.map)}
                             class='w-full h-[450px]'
@@ -129,24 +129,26 @@ const offices = (await hygraph('offices')) as Array<Office>
                             loading='lazy'
                             referrerpolicy='no-referrer-when-downgrade'
                         />
-                        <h2 class='text-4xl font-bold'>{office?.name}</h2>
-                        <a class='flex gap-2'>
-                            <i class='fa-solid fa-location-dot text-2xl' />
-                            <Fragment
-                                set:html={addLineBreaks(office?.address)}
-                            />
-                        </a>
-                        {office?.email && (
-                            <a
-                                class='flex gap-2 items-center group'
-                                href={`mailto:${office?.email}`}
-                            >
-                                <i class='fa-solid fa-envelope text-2xl' />
-                                <span class='group-hover:underline'>
-                                    {office?.email}
-                                </span>
+                        <div class='p-8 space-y-4'>
+                            <h2 class='text-4xl font-bold'>{office?.name}</h2>
+                            <a class='flex gap-2'>
+                                <i class='fa-solid fa-location-dot text-2xl' />
+                                <Fragment
+                                    set:html={addLineBreaks(office?.address)}
+                                />
                             </a>
-                        )}
+                            {office?.email && (
+                                <a
+                                    class='flex gap-2 items-center group'
+                                    href={`mailto:${office?.email}`}
+                                >
+                                    <i class='fa-solid fa-envelope text-2xl' />
+                                    <span class='group-hover:underline'>
+                                        {office?.email}
+                                    </span>
+                                </a>
+                            )}
+                        </div>
                     </div>
                 ))
             }
