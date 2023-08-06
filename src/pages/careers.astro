@@ -29,12 +29,12 @@ const jobs = (await hygraph('jobs')) as Array<Job>
             <div class='grid gap-12 mt-16 lg:grid-cols-2'>
                 {
                     jobs?.map((job) => (
-                        <div class='bg-yellow-50 p-8'>
+                        <div class='bg-blue-50 p-8'>
                             <div class='flex gap-8 items-start justify-between'>
                                 <h2 class='text-3xl font-bold'>{job?.title}</h2>
                                 <a
                                     href='#apply'
-                                    class='text-lg bg-yellow-300 text-black py-2 px-6 font-bold hover:bg-yellow-400 transition-all duration-300 hover:scale-105 text-center'
+                                    class='text-lg bg-blue-300 text-black py-2 px-6 font-bold hover:bg-blue-400 transition-all duration-300 hover:scale-105 text-center'
                                 >
                                     Apply
                                 </a>
@@ -51,7 +51,7 @@ const jobs = (await hygraph('jobs')) as Array<Job>
 
     <section class='mx-5 py-20' id='apply'>
         <div
-            class='container mx-auto bg-yellow-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end'
+            class='container mx-auto bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end'
         >
             <img
                 src='/tracktor.png'
@@ -72,7 +72,7 @@ const jobs = (await hygraph('jobs')) as Array<Job>
                 <p class='mt-8 text-lg'>To apply, please email CV to</p>
                 <a
                     href='mailto:management.hightec@gmail.com?subject=Job application'
-                    class='lg:text-lg mt-2 bg-black text-yellow-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center'
+                    class='lg:text-lg mt-2 bg-black text-blue-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center'
                     >management.hightec@gmail.com</a
                 >
             </div>
