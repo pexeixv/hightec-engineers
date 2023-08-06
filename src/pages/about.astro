@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro'
 import team from '@data/team.json'
+import hygraph from '@js/hygraph'
+export interface Leader {
+    designation: string
+    description: string
+    name: string
+    photograph: { url: string }
+}
+
+const leaders = (await hygraph('leaders')) as Array<Leader>
 ---
 
 <BaseLayout title='About'>
@@ -62,10 +71,10 @@ import team from '@data/team.json'
             <h2 class='text-5xl mb-8 font-black'>The leadership</h2>
             <div class='grid gap-16 lg:grid-cols-3 mt-16'>
                 {
-                    team.map((person) => (
+                    leaders.map((person) => (
                         <div class='flex flex-col max-w-md mx-auto'>
                             <img
-                                src={person?.image}
+                                src={person?.photograph.url}
                                 alt=''
                                 class='aspect-square object-cover overflow-hidden'
                             />

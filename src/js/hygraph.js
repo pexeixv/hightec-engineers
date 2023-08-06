@@ -56,6 +56,18 @@ const queries = {
             }
         }
     `,
+    leaders: gql`
+        query Leaders {
+            leaders {
+                designation
+                description
+                name
+                photograph {
+                    url
+                }
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {
