@@ -3,22 +3,29 @@ import hygraph from '@js/hygraph'
 import FeatureCard from '@components/FeatureCard.astro'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import features from '@data/features.json'
-import clients from '@data/clients.json'
 import ServiceCard from '@components/ServiceCard.astro'
 import ProjectCard from '@components/ProjectCard.astro'
+interface Image {
+    url: string
+}
 interface Service {
     title: string
     icon: string
 }
 interface Project {
-    image: {
-        url: string
-    }
+    image: Image
     title: string
     description: string
 }
+interface Partner {
+    name: string
+    logo: Image
+    website: string
+}
+
 const services = (await hygraph('services')) as Array<Service>
 const projects = (await hygraph('projects')) as Array<Project>
+const partners = (await hygraph('partners')) as Array<Partner>
 ---
 
 <BaseLayout title='Home' header='absolute'>
@@ -138,11 +145,15 @@ const projects = (await hygraph('projects')) as Array<Project>
                 class='grid grid-cols-4 max-w-2xl mx-auto gap-8 lg:gap-12 mt-16'
             >
                 {
-                    clients.map((client) => (
-                        <img
-                            src={client.url}
-                            class='max-h-48 mx-auto grayscale'
-                        />
+                    partners.map((partner) => (
+                        <a href={partner.website} target='_blank'>
+                            <img
+                                title={partner.name}
+                                alt={partner.name}
+                                src={partner.logo.url}
+                                class='max-h-48 mx-auto grayscale'
+                            />
+                        </a>
                     ))
                 }
             </div>

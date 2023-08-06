@@ -34,6 +34,17 @@ const queries = {
             }
         }
     `,
+    partners: gql`
+        query Partners {
+            partners {
+                name
+                logo {
+                    url
+                }
+                website
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {
