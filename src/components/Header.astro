@@ -12,15 +12,15 @@ const navLinks = [
 <header
     class:list={[
         'top-0 left-0 w-full z-20',
-        { absolute: headerIsAbsolute, 'bg-black': !headerIsAbsolute },
+        { absolute: headerIsAbsolute, 'bg-white': !headerIsAbsolute },
     ]}
 >
     <div
-        class='container mx-auto px-5 py-5 flex flex-col md:flex-row items-center text-white justify-between gap-4'
+        class='container mx-auto px-5 py-5 flex flex-col md:flex-row items-center text-black justify-between gap-4'
     >
         <a href='/' class='flex items-center gap-2'>
-            <img src='/images/logo.svg' alt='' class='h-12' />
-            <span class='leading-none'>Hightec <br /> Engineers</span>
+            <img src='/images/logo.jpg' alt='' class='h-12' />
+            <!-- <span class='leading-none'>Hightec <br /> Engineers</span> -->
         </a>
         <nav class='flex items-center gap-4 text-sm md:text-base'>
             {

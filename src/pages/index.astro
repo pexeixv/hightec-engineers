@@ -28,14 +28,14 @@ const projects = (await hygraph('projects')) as Array<Project>
 const partners = (await hygraph('partners')) as Array<Partner>
 ---
 
-<BaseLayout title='Home' header='absolute'>
+<BaseLayout title='Home'>
     <section
         class='bg-no-repeat bg-cover bg-top filter'
         style="background-image:url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"
     >
         <div class='bg-black/40 text-white'>
             <div
-                class='container mx-auto px-5 py-10 lg:py-20 flex flex-col items-center min-h-screen justify-center text-center drop-shadow-lg'
+                class='container mx-auto px-5 py-10 lg:py-20 flex flex-col items-center min-h-[80vh] justify-center text-center drop-shadow-lg'
             >
                 <h1 class='text-3xl md:text-4xl lg:text-7xl font-black'>
                     Building <span
