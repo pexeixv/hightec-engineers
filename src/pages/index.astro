@@ -26,6 +26,13 @@ interface Partner {
 const services = (await hygraph('services')) as Array<Service>
 const projects = (await hygraph('projects')) as Array<Project>
 const partners = (await hygraph('partners')) as Array<Partner>
+const slides = [
+    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+]
 ---
 
 <script>
@@ -45,61 +52,20 @@ const partners = (await hygraph('partners')) as Array<Partner>
                 class='relative min-h-[80vh] overflow-hidden bg-black text-white'
             >
                 <div class='opacity-40 h-full w-full'>
-                    <!-- Item 1 -->
-                    <div
-                        class='hidden duration-700 ease-in-out'
-                        data-carousel-item
-                    >
-                        <img
-                            src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                            class='absolute block w-full m-auto inset-0 object-cover h-full'
-                            alt='...'
-                        />
-                    </div>
-                    <!-- Item 2 -->
-                    <div
-                        class='hidden duration-700 ease-in-out'
-                        data-carousel-item='active'
-                    >
-                        <img
-                            src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                            class='absolute block w-full m-auto inset-0 object-cover h-full'
-                            alt='...'
-                        />
-                    </div>
-                    <!-- Item 3 -->
-                    <div
-                        class='hidden duration-700 ease-in-out'
-                        data-carousel-item
-                    >
-                        <img
-                            src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                            class='absolute block w-full m-auto inset-0 object-cover h-full'
-                            alt='...'
-                        />
-                    </div>
-                    <!-- Item 4 -->
-                    <div
-                        class='hidden duration-700 ease-in-out'
-                        data-carousel-item
-                    >
-                        <img
-                            src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                            class='absolute block w-full m-auto inset-0 object-cover h-full'
-                            alt='...'
-                        />
-                    </div>
-                    <!-- Item 5 -->
-                    <div
-                        class='hidden duration-700 ease-in-out'
-                        data-carousel-item
-                    >
-                        <img
-                            src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                            class='absolute block w-full m-auto inset-0 object-cover h-full'
-                            alt='...'
-                        />
-                    </div>
+                    {
+                        slides.map((slide, index) => (
+                            <div
+                                class='hidden duration-700 ease-in-out'
+                                data-carousel-item={!index ? 'active' : ''}
+                            >
+                                <img
+                                    src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                                    class='absolute block w-full m-auto inset-0 object-cover h-full'
+                                    alt='...'
+                                />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </section>
