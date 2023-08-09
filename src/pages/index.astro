@@ -22,17 +22,15 @@ interface Partner {
     logo: Image
     website: string
 }
+interface Slide {
+    image: Image
+}
 
 const services = (await hygraph('services')) as Array<Service>
 const projects = (await hygraph('projects')) as Array<Project>
 const partners = (await hygraph('partners')) as Array<Partner>
-const slides = [
-    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-]
+const slides = (await hygraph('slides')) as Array<Slide>
+console.log(JSON.stringify(slides))
 ---
 
 <script>
@@ -59,9 +57,8 @@ const slides = [
                                 data-carousel-item={!index ? 'active' : ''}
                             >
                                 <img
-                                    src='https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                                    src={slide.image.url}
                                     class='absolute block w-full m-auto inset-0 object-cover h-full'
-                                    alt='...'
                                 />
                             </div>
                         ))

@@ -68,6 +68,15 @@ const queries = {
             }
         }
     `,
+    slides: gql`
+        query Slides {
+            slides {
+                image {
+                    url
+                }
+            }
+        }
+    `,
 }
 
 const hygraph = async (query) => {
