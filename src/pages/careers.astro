@@ -39,7 +39,10 @@ const jobs = (await hygraph('jobs')) as Array<Job>
                                     Apply
                                 </a>
                             </div>
-                            <div class='prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-headings:font-bold prose-p:m-0 prose-headings:mt-2'>
+                            <span class='text-xl font-bold'>
+                                Required: {job.number}
+                            </span>
+                            <div class='mt-8 prose prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-headings:font-bold prose-p:m-0 prose-headings:mt-2'>
                                 <Fragment set:html={job.description.html} />
                             </div>
                         </div>
