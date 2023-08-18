@@ -172,7 +172,7 @@ const slides = (await hygraph('slides')) as Array<Slide>
 
     <section>
         <div class='container mx-auto px-5 py-10 lg:py-20'>
-            <h2 class='text-4xl font-bold text-center'>Our partners</h2>
+            <h2 class='text-4xl font-bold text-center'>Our clients</h2>
 
             <div
                 class='grid grid-cols-4 max-w-2xl mx-auto gap-8 lg:gap-12 mt-16'
@@ -193,22 +193,31 @@ const slides = (await hygraph('slides')) as Array<Slide>
         </div>
     </section>
 
+    <section>
+        <div
+            class='container mx-auto px-5 py-10 lg:py-20 grid lg:grid-cols-2 max-w-6xl gap-8'
+        >
+            <img class='border-2 shadow-xl' src='/certificate-1.jpg' alt='' />
+            <img class='border-2 shadow-xl' src='/article.jpg' alt='' />
+        </div>
+    </section>
+
     <section class='mx-5 py-20'>
         <div
-            class='container mx-auto bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end'
+            class='container mx-auto relative bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row gap-8 mt-28 lg:mt-16 lg:items-end'
         >
             <img
-                src='/tracktor.png'
+                src='/dgps.png'
                 alt=''
-                class='max-h-full w-full relative lg:left-28 max-w-md -mt-28'
+                class='w-auto absolute right-0 bottom-0 -mt-28 h-72 max-lg:opacity-60'
             />
-            <div class='flex flex-col items-start justify-center lg:px-4'>
+            <div
+                class='relative flex flex-col items-start justify-center lg:px-4'
+            >
                 <h2 class='text-4xl font-bold'>
                     Transform Visions into Reality
                 </h2>
-                <p class='text-lg mt-2'>
-                    Discover Our Construction Expertise Today
-                </p>
+                <p class='text-lg mt-2'>Discover Our Expertise Today</p>
                 <a
                     href='/contact'
                     class='lg:text-lg mt-8 bg-black text-blue-300 py-2 px-6 font-bold transition-all duration-300 hover:scale-105 text-center'

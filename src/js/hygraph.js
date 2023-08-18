@@ -17,7 +17,7 @@ const queries = {
     `,
     services: gql`
         query Services {
-            services {
+            services(first: 100) {
                 title
                 icon
             }

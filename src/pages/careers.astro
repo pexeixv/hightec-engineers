@@ -18,10 +18,8 @@ const jobs = (await hygraph('jobs')) as Array<Job>
         <div class='container mx-auto px-5 py-10 lg:py-20'>
             <h1 class='text-5xl mb-8 font-black'>Join the team</h1>
             <p class='max-w-4xl'>
-                Are you passionate about the construction industry? Join our
-                team of dedicated professionals and be a part of building
-                remarkable structures. We offer exciting career opportunities,
-                competitive compensation packages, and a collaborative work
+                Are you interested in being part of Hightec Engineers family? We
+                offer exciting career opportunities, and a collaborative work
                 environment. Explore our job openings below and take the first
                 step towards a rewarding career with us.
             </p>
@@ -54,23 +52,24 @@ const jobs = (await hygraph('jobs')) as Array<Job>
 
     <section class='mx-5 py-20' id='apply'>
         <div
-            class='container mx-auto bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row-reverse gap-8 justify-center mt-28 lg:mt-16 lg:items-end'
+            class='container mx-auto relative bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row gap-8 mt-28 lg:mt-16 lg:items-end'
         >
             <img
-                src='/tracktor.png'
+                src='/dgps.png'
                 alt=''
-                class='max-h-full w-full relative lg:left-28 max-w-md -mt-28'
+                class='w-auto absolute right-0 bottom-0 -mt-28 h-72 max-lg:opacity-60'
             />
-            <div class='flex flex-col items-start justify-center lg:px-4'>
+            <div
+                class='relative flex flex-col items-start justify-center lg:px-4 max-w-[80%]'
+            >
                 <h2 class='text-4xl font-bold'>
                     Come, build your future with us!
                 </h2>
                 <p class='mt-2'>
-                    Ready to lay the foundation for your career in construction?
-                    Join our team of builders and shape the future of remarkable
-                    structures. Take the next step today and apply for our
-                    exciting job opportunities. Let's construct a promising
-                    future together!
+                    Ready to lay the foundation for your career? Join our team
+                    and shape your future of remarkable structures. Take the
+                    next step today and apply for our exciting job
+                    opportunities. Let's construct a promising future together!
                 </p>
                 <p class='mt-8 text-lg'>To apply, please email CV to</p>
                 <a
