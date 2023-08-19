@@ -1,0 +1,16 @@
+---
+export interface Props {
+    path?: string
+    class?: string
+    id?: string
+    height?: number
+    width?: number
+    alt?: string
+}
+const { path } = Astro.props as Props
+const { default: innerHtml } = await import(`../assets/svg/${path}.svg?raw`)
+---
+
+<div {...Astro.props}>
+    <Fragment set:html={innerHtml} />
+</div>

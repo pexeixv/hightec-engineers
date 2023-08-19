@@ -11,6 +11,17 @@ interface Job {
 }
 
 const jobs = (await hygraph('jobs')) as Array<Job>
+
+const reviews = [
+    {
+        name: 'Richa Satardekar',
+        quote: 'Working in H.E for more than a year makes me feel that Working environment is very friendly and makes me easier to get used to new work. Every other project comes with some new challenges and this opportunity gives me the chance to grow professionally.',
+    },
+    {
+        name: 'Saishree Shirodkar',
+        quote: 'I got to learn a lot of new things in my tenure. The office staff is friendly and supports me in solving my difficulties which are encountered during the work.',
+    },
+]
 ---
 
 <BaseLayout title='Careers'>
@@ -50,7 +61,46 @@ const jobs = (await hygraph('jobs')) as Array<Job>
         </div>
     </section>
 
-    <section class='mx-5 py-20' id='apply'>
+    <section>
+        <div class='container mx-auto px-5 py-10 lg:py-10 max-w-6xl relative'>
+            <svg
+                class='absolute inset-0 m-auto opacity-5'
+                xmlns='http://www.w3.org/2000/svg'
+                width='80'
+                height='80'
+                viewBox='0 0 24 24'
+                ><path
+                    d='M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z'
+                ></path></svg
+            >
+            <div
+                class='splide px-20 lg:px-28 py-12'
+                aria-label='Splide Basic HTML Example'
+            >
+                <div class='splide__track'>
+                    <ul class='splide__list'>
+                        {
+                            reviews.map((review) => (
+                                <li
+                                    class='splide__slide'
+                                    class=' flex flex-col items-center text-center'
+                                >
+                                    <blockquote class='text-center'>
+                                        "{review.quote}"
+                                    </blockquote>
+                                    <h3 class='text-center font-bold text-xl mt-4'>
+                                        {review.name}
+                                    </h3>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class='mx-5' id='apply'>
         <div
             class='container mx-auto relative bg-blue-300/70 p-6 lg:p-8 max-w-4xl flex flex-col lg:flex-row gap-8 mt-28 lg:mt-16 lg:items-end'
         >
@@ -81,3 +131,17 @@ const jobs = (await hygraph('jobs')) as Array<Job>
         </div>
     </section>
 </BaseLayout>
+
+<script>
+    import Splide from '@splidejs/splide'
+    new Splide('.splide', {
+        autoplay: true,
+        type: 'loop',
+        perPage: 1,
+    }).mount()
+    import '@splidejs/splide/css'
+    import '@splidejs/splide/css/skyblue'
+    document.querySelectorAll('.splide__pagination__page').forEach((dot) => {
+        dot.classList.add('bg-neutral-400')
+    })
+</script>
