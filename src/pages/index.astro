@@ -175,7 +175,7 @@ const slides = (await hygraph('slides')) as Array<Slide>
             <h2 class='text-4xl font-bold text-center'>Our clients</h2>
 
             <div
-                class='grid grid-cols-4 max-w-2xl mx-auto gap-8 lg:gap-12 mt-16'
+                class='grid grid-cols-4 max-w-2xl mx-auto gap-8 lg:gap-12 mt-16 place-items-center'
             >
                 {
                     partners.map((partner) => (
@@ -184,11 +184,12 @@ const slides = (await hygraph('slides')) as Array<Slide>
                                 title={partner.name}
                                 alt={partner.name}
                                 src={partner.logo.url}
-                                class='max-h-48 mx-auto grayscale'
+                                class='max-h-24 mx-auto grayscale'
                             />
                         </a>
                     ))
                 }
+                <div>+1000 more</div>
             </div>
         </div>
     </section>
