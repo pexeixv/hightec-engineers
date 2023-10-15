@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro'
-import team from '@data/team.json'
 import hygraph from '@js/hygraph'
 export interface Leader {
     designation: string
@@ -20,16 +19,7 @@ const leaders = (await hygraph('leaders')) as Array<Leader>
             <div
                 class='lg:w-1/2 flex items-start justify-center relative h-fit order-1 lg:order-2'
             >
-                <img
-                    src='https://images.pexels.com/photos/8961394/pexels-photo-8961394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                    alt=''
-                    class=''
-                />
-                <img
-                    src='https://images.pexels.com/photos/8961398/pexels-photo-8961398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                    alt=''
-                    class='absolute w-60 -bottom-16 -right-16 lg:right-0 lg:-left-16'
-                />
+                <img src='/equipment.png' alt='' class='w-full' />
             </div>
             <div
                 class='space-y-5 max-w-4xl mt-12 lg:mt-0 lg:w-1/2 order-2 lg:order-1'
